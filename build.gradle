@@ -2,7 +2,7 @@
 buildscript {
     ext {
         kotlin_version = "1.4.10"
-        retrofit_version = '2.7.1'
+        retrofit_version = '2.9.0'
         navigationVersion = "2.3.0"
         gradleVersion = '4.0.2'
         supportlibVersion = '1.2.0'
