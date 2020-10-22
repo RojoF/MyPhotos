@@ -1,4 +1,4 @@
-package com.example.android.searchdebounce.ui
+package com.e.myphotos.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,18 +6,18 @@ import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.android.searchdebounce.R
-import com.example.android.searchdebounce.databinding.ActivityPhotosBinding
-import com.example.android.searchdebounce.domain.Photo
+import com.e.myphotos.R
+import com.e.myphotos.databinding.ActivityResultBinding
+import com.e.myphotos.domain.Photo
 
 
 class ResultActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityPhotosBinding
+    private lateinit var binding: ActivityResultBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_photos)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_result)
         val photosViewModel: PhotosViewModel by viewModels()
 
         binding.photosRecyclerView.adapter = photosViewModel.photosAdapter

@@ -5,8 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.e.myphotos.domain.Photo
-import com.example.android.searchdebounce.domain.Photo
-import com.example.android.searchdebounce.networking.WebClient
+import com.e.myphotos.net.WebClient
 import kotlinx.coroutines.launch
 
 class PhotosViewModel : ViewModel() {
