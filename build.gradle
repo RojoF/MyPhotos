@@ -3,7 +3,6 @@ buildscript {
     ext {
         kotlin_version = "1.4.10"
         retrofit_version = '2.9.0'
-        navigationVersion = "2.3.0"
         gradleVersion = '4.0.2'
         supportlibVersion = '1.2.0'
         dataBindingCompilerVersion = gradleVersion
@@ -14,7 +13,6 @@ buildscript {
     }
     dependencies {
         classpath "com.android.tools.build:gradle:$gradleVersion"
-        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         // NOTE: Do not place your application dependencies here; they belong
