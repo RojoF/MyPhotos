@@ -2,5 +2,6 @@
     <string name="app_name">MyPhotos</string>
     <string name="app_label">Flickr</string>
     <string name="buscar">Buscar</string>
+    <string name="toast">Introduce al menos un caracter en el buscador para continuar</string>
 
 </resources>

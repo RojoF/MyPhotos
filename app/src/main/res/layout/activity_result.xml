@@ -1,33 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="4dp"
         tools:context=".ui.PhotosActivity">
 
 
-        <EditText
-            android:id="@+id/searchBox"
+        <TextView
+            android:id="@+id/title_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:hint="@string/buscar"
-            android:inputType="text"
-            android:lines="1"
-            android:padding="5dp" />
+            android:textAlignment="textEnd"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-        <ImageButton
-            android:id="@+id/searchButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="false"
-            android:layout_alignParentEnd="true"
-            app:srcCompat="@android:drawable/ic_menu_search" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/photosRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
 
-
-    </RelativeLayout>
 </layout>
