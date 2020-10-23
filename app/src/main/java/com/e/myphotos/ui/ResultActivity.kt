@@ -26,12 +26,13 @@ class ResultActivity : AppCompatActivity() {
         binding.photosRecyclerView.adapter = photosViewModel.photosAdapter
         binding.photosRecyclerView.layoutManager = GridLayoutManager(this, 1)
         photosViewModel.loadPhotos(searchText).observe(this,
-            Observer<List<Photo>> { list ->
+            { list ->
                 with(photosViewModel.photosAdapter) {
                     photos.clear()
                     photos.addAll(list)
                     notifyDataSetChanged()
                 }
+
             })
 
     }
