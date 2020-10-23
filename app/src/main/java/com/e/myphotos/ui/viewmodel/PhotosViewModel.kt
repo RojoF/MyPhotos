@@ -1,23 +1,29 @@
-package com.e.myphotos.ui
+package com.e.myphotos.ui.viewmodel
 
-import android.content.Context
+
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.e.myphotos.domain.Photo
 import com.e.myphotos.net.WebClient
+import com.e.myphotos.ui.PhotosAdapter
+import com.e.myphotos.ui.ResultActivity
 import kotlinx.coroutines.launch
-import java.security.AccessController.getContext
+
 
 class PhotosViewModel : ViewModel() {
+
     private val mutablePhotosListLiveData = MutableLiveData<List<Photo>>()
-
     private val photosListLiveData: LiveData<List<Photo>> = mutablePhotosListLiveData
-
     private var resultActivity = ResultActivity()
-    var photosAdapter = PhotosAdapter{selectedItem: Photo -> resultActivity.itemClicked(selectedItem,
-        resultActivity.applicationContext)}
+
+    var photosAdapter = PhotosAdapter { selectedItem: Photo ->
+        resultActivity.itemClicked(
+            selectedItem,
+            resultActivity.applicationContext
+        )
+    }
 
     fun loadPhotos(searchText: String?): LiveData<List<Photo>> {
         viewModelScope.launch {

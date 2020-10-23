@@ -15,8 +15,8 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".SearchActivity"
-            android:theme="@style/Theme.MyPhotosNoBar"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyPhotosNoBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

@@ -19,12 +19,12 @@ class SearchActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_search)
         binding.searchButton.setOnClickListener {
-            AddSearch(it)
+            addSearch(it)
         }
 
     }
 
-    private fun AddSearch(view: View) {
+    private fun addSearch(view: View) {
 
         if (binding.searchBox.getText().toString().isNotEmpty()) {
 

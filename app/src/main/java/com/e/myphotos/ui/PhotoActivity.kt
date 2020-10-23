@@ -8,9 +8,6 @@ import com.e.myphotos.databinding.ActivityPhotoBinding
 import com.e.myphotos.domain.Photo
 import com.github.chrisbanes.photoview.PhotoView
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.activity_photo.*
-import kotlinx.android.synthetic.main.card.view.*
-
 
 class PhotoActivity : AppCompatActivity() {
 
@@ -21,7 +18,7 @@ class PhotoActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_photo)
         val photo = intent.getSerializableExtra("photo") as? Photo
 
-        val photoView = binding.imageViewfull as PhotoView
+        val photoView = binding.imageViewfull
         photoView.isZoomable
         photoView.scaleType
         if (photo != null) {
