@@ -33,6 +33,7 @@ class ResultActivity : AppCompatActivity() {
                     notifyDataSetChanged()
                 }
 
+
             })
 
     }
