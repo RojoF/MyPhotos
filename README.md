@@ -8,5 +8,5 @@ Aplicacion de visualizacion de fotos de Flickr -> Arquitectura MVVM
                                                -> Libreria Externa PhotoView (Hacer Zoom)
                                                -> Libreria Externa Picasso (diseño y carga de fotos)
                                                -> Wrapper Externo
-                                               -> Diseño con CardView
+                                               -> Diseño del recyclerView con CardView
                                                
