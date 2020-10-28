@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.provider.AlarmClock
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -28,6 +29,13 @@ class ResultActivity : AppCompatActivity() {
         binding.titleSearch.setText("Has buscado: $searchText")
         val photosViewModel: PhotosViewModel by viewModels()
         binding.photosRecyclerView.adapter = photosViewModel.photosAdapter
+
+        photosViewModel.photosAdapter.clickListener = { photo ->
+            itemClicked(photo, this)
+
+        }
+
+
         binding.photosRecyclerView.layoutManager = GridLayoutManager(this, 1)
         photosViewModel.loadPhotos(searchText).observe(this,
             { list ->
@@ -41,10 +49,12 @@ class ResultActivity : AppCompatActivity() {
     }
 
     fun itemClicked(photo: Photo, cont: Context) {
+
+        //Toast.makeText(this,"Cell clicked", Toast.LENGTH_SHORT).show()
         val intent = Intent(cont, PhotoActivity::class.java).apply {
             putExtra("photo", photo)
         }
         startActivity(intent)
-
     }
 }
+

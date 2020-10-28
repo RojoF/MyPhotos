@@ -1,6 +1,7 @@
 package com.e.myphotos.ui.viewmodel
 
 
+import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -19,9 +20,14 @@ class PhotosViewModel : ViewModel() {
     private var resultActivity = ResultActivity()
 
     var photosAdapter = PhotosAdapter { selectedItem: Photo ->
+
+        fun getContext(): Context {
+            return resultActivity!!.applicationContext!!
+        }
+
         resultActivity.itemClicked(
             selectedItem,
-            resultActivity.applicationContext
+            getContext()
         )
     }
 
@@ -39,4 +45,5 @@ class PhotosViewModel : ViewModel() {
         }
         return photosListLiveData
     }
+
 }

@@ -1,6 +1,7 @@
 package com.e.myphotos.ui
 
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +15,8 @@ import kotlinx.android.synthetic.main.card.view.*
 
 class PhotosAdapter(
     val photos: MutableList<Photo> = mutableListOf(),
-    private val clickListener: (Photo) -> Unit
+    var clickListener: ((Photo) -> Unit)? = null
+
 ) :
     RecyclerView.Adapter<PhotosAdapter.PhotosViewHolder>() {
 
@@ -32,34 +34,32 @@ class PhotosAdapter(
 
 
     override fun onBindViewHolder(holder: PhotosViewHolder, position: Int) {
-        holder.bind(photos[position], clickListener)
+        holder.bind(photos[position])
 
 
     }
 
     inner class PhotosViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        init {
+            itemView.setOnClickListener {
+                clickListener?.invoke(photos[adapterPosition])
+            }}
 
+            fun bind(photo: Photo) {
+                val photoView = itemView.imageView as PhotoView
+                photoView.isZoomable
+                photoView.scaleType
+                itemView.title_fullphoto.text = photo.title
+                itemView.id_fullphoto.text = photo.id
+                Picasso.get().load(photo.url)
+                    .resize(IMAGE_SIDE_PX, IMAGE_SIDE_PX)
+                    .centerCrop()
+                    .into(itemView.imageView)
 
-        fun bind(photo: Photo, clickListener: (Photo) -> Unit) {
-            val photoView = itemView.imageViewfull as PhotoView
-            photoView.isZoomable
-            photoView.scaleType
-            itemView.title_fullphoto.text = photo.title
-            itemView.id_fullphoto.text = photo.id
-
-            Picasso.get().load(photo.url)
-                .resize(IMAGE_SIDE_PX, IMAGE_SIDE_PX)
-                .centerCrop()
-                .into(itemView.imageViewfull)
-
-            itemView.card.setOnClickListener() {
-                clickListener(photo)
             }
 
         }
 
-
-    }
 
 }
 
