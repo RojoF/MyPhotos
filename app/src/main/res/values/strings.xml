@@ -4,5 +4,6 @@
     <string name="buscar">Buscar</string>
     <string name="toast">Introduce al menos un caracter en el buscador para continuar</string>
     <string name="buscado">Has buscado:</string>
+    <string name="send_to">Compartir</string>
 
 </resources>
